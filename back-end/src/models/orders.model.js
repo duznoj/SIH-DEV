@@ -11,6 +11,9 @@ const remarksSchema = new mongoose.Schema({
             },
             delayTime: {
                 type: Date,
+            },
+            rakeChange: {
+                
             }
         
 }, {timestamps: true, _id: false})
@@ -34,9 +37,14 @@ const orderSchema = new mongoose.Schema({
         type: Date
     },
 
+    noOfRakes: {
+
+    },
     status: {
         type: String,
-        enum: ["fulfilled", "in-transit", "new"],
+        enum: {
+            values: ["fulfilled", "in-transit", "new"]
+        },
         default: "new"
     },
 
